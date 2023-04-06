@@ -58,8 +58,11 @@ def iterate(f, x, a, k):
     Returns:
         numpy array of k^th iterate values
     '''
-    #INSERT YOUR CODE HERE
-    pass #REMOVE THIS LINE (which is just here to prevent an error message)
+    y = np.copy(x)
+    for i in range(x.shape[0]):
+        for j in range(k):
+            y[i] = f(y[i], a)
+    return y
         
 def p2():
     '''
@@ -138,6 +141,6 @@ def p4():
 
 
 if __name__ == '__main__':
-    # p2()
+    p2()
     p3()
-    # p4()
+    p4()
